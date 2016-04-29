@@ -75,7 +75,7 @@ def proxy_exact_request(environ, start_response):
     except ValueError:
         content_length = 0
     if content_length:
-        body = environ['wsgi.input'].read(content_length)
+        body = environ['wsgi.input']
     else:
         body = ''
     headers['Content-Length'] = content_length
